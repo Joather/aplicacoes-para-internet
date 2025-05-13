@@ -1,0 +1,173 @@
+/* Estilo base do corpo da página */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Estilo para o cabeçalho do site */
+  .site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Navegação principal */
+  .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #444;
+    text-align: center;
+  }
+  
+  .main-nav li {
+    display: inline;
+  }
+  
+  .main-nav a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+/* Estilo para o efeito de hover nos links de navegação */
+.main-nav a:hover {                /* Quando o link é "hovered" (passado o mouse) */
+    background-color: #555;          /* Muda a cor de fundo para um tom mais escuro */
+  }
+  
+  /* Estilo para a área que envolve o conteúdo */
+  .content-wrapper {                 /* Define a área geral onde o conteúdo principal e secundário ficam */
+    display: flex;                   /* Usando flexbox para alinhar os itens lado a lado */
+    padding: 20px;                   /* Adiciona um espaço interno de 20px */
+    gap: 20px;                       /* Adiciona um espaçamento de 20px entre os elementos filhos dentro do wrapper */
+    max-width: 1200px;               /* Limita a largura máxima para 1200px */
+    margin: 0 auto;                  /* Centraliza o conteúdo horizontalmente na tela */
+  }
+  
+  /* Estilo para o conteúdo principal */
+  .main-content {                    /* A área do conteúdo principal */
+    flex: 3;                         /* Faz com que o conteúdo principal ocupe 3 partes do espaço total (se comparado a outros elementos dentro do flex) */
+    background-color: #fff;          /* Fundo branco para o conteúdo principal */
+    padding: 20px;                   /* Adiciona 20px de espaço interno */
+    box-sizing: border-box;          /* Faz com que o padding seja incluído na largura total do elemento */
+  }
+/* Lista da barra lateral */
+.sidebar ul {
+    list-style: none;  /* Remove os marcadores de lista */
+    padding: 0;        /* Remove o espaçamento interno */
+  }
+  
+  /* Links da barra lateral */
+  .sidebar li a {
+    display: block;            /* Ocupa toda a largura do item da lista */
+    padding: 10px 0;           /* Espaço interno vertical */
+    text-decoration: none;     /* Remove o sublinhado */
+    color: #333;               /* Cor do texto */
+  }
+  
+  /* Rodapé do site */
+  .site-footer {
+    background-color: #333;    /* Fundo escuro */
+    color: #fff;               /* Texto branco */
+    text-align: center;        /* Centraliza o texto */
+    padding: 10px;             /* Espaço interno */
+    position: sticky;          /* Fixa o rodapé se o conteúdo for curto */
+    bottom: 0;
+    width: 100%;               /* Ocupa toda a largura da tela */
+    box-sizing: border-box;    /* Inclui padding na largura total */
+  }
+  
+  /* Media Queries para Responsividade */
+  /* Para telas menores que 768px (tablets e celulares menores) */
+  @media (max-width: 768px) {
+    /* Aqui você pode inserir estilos responsivos */
+  }
+/* 
+==================================================
+ MEDIA QUERY: Telas com largura até 768px (tablets e celulares)
+==================================================
+*/
+@media (max-width: 768px) {
+
+    /* 
+    Empilha os elementos dentro de .content-wrapper em coluna,
+    ou seja, o conteúdo principal e a sidebar ficam um embaixo do outro
+    */
+    .content-wrapper {
+      flex-direction: column;
+    }
+  
+    /* 
+    Alinha os itens do menu de navegação à esquerda 
+    (em vez de centralizados como em telas maiores)
+    */
+    .main-nav ul {
+      text-align: left;
+    }
+  
+    /* 
+    Cada item da navegação vira um bloco, ocupando 100% da largura.
+    Isso melhora a usabilidade em dispositivos de toque.
+    */
+    .main-nav li {
+      display: block;
+      border-bottom: 1px solid #555; /* Separação visual entre os itens */
+    }
+  
+    /* 
+    Remove a borda inferior do último item do menu 
+    para manter um visual mais limpo
+    */
+    .main-nav li:last-child {
+      border-bottom: none;
+    }
+  
+    /* 
+    Os links de navegação também se tornam blocos,
+    permitindo que ocupem toda a área clicável horizontal
+    */
+    .main-nav a {
+      display: block;
+      padding: 10px; /* Adiciona espaço interno para toque confortável */
+    }
+  
+    /* 
+    Reduz o tamanho do título do cabeçalho em telas menores,
+    mantendo a proporção visual
+    */
+    .site-header h1 {
+      font-size: 1.8em;
+    }
+  }
+  
+  
+  /* 
+  ==================================================
+   MEDIA QUERY: Telas muito pequenas (até 480px)
+   Ideal para celulares pequenos
+  ==================================================
+  */
+  @media (max-width: 480px) {
+  
+    /* 
+    Aumenta o tamanho da fonte para melhorar a leitura em telas pequenas.
+    1.5em é uma boa proporção sem exageros.
+    */
+    body {
+      font-size: 1.5em;
+    }
+  
+    /* 
+    Reduz o padding das áreas de conteúdo e da sidebar 
+    para otimizar o espaço na tela
+    */
+    .main-content,
+    .sidebar {
+      padding: 15px;
+    }
+  }
+      
